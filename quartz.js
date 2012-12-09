@@ -54,7 +54,7 @@ Quartz.prototype.query = function(method, args, callback) {
   };
 
   if (this.auth_required) {
-    var auth = new Buffer(this.username + this.password).toString('base64');
+    var auth = new Buffer(this.username + ':' + this.password).toString('base64');
     headers['Authorization'] = 'Basic ' + auth;
   }
 
